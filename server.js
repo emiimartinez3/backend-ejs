@@ -1,7 +1,7 @@
 const express = require('express')
 const { Router } = express
 const routerProducts = Router()
-const containerApi = require ('./src/containerApi') // import de clase constructora
+const containerApi = require ('./src/containerApi')
 const app = express()
 
 app.use(express.json())
@@ -41,11 +41,11 @@ routerProducts.delete('/:id', (req, res) => {
 })
 
 
-// Running server
+
 const PORT = process.env.port || 8080
 
 const server = app.listen(PORT, () => {
-    console.log(`HTTP Server running on port ${server.address().port}`)
+    console.log(`Servidor corriendo en el puerto ${server.address().port}`)
 })
 
-server.on("error", error => console.log(`Error on server ${error}`))
+server.on("error", error => console.log(`Error en el servidor ${error}`))
